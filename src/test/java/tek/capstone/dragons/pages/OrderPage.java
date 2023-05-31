@@ -26,13 +26,13 @@ public class OrderPage extends BaseSetup {
 	@FindBy (xpath = "//div//p[text()='Kasa Outdoor Smart Plug']")
 	public WebElement kasaProduct;
 	
-	@FindBy (className = "product__select")
+	@FindBy (xpath = "//select[@class='product__select']")
 	public WebElement quantity;
 	
 	@FindBy (id = "addToCartBtn")
 	public WebElement addToCartBtn;
 	
-	@FindBy (id = "cartQuantity")
+	@FindBy (xpath = "//div[@id='cartBtn']//span[@id='cartQuantity']")
 	public WebElement CartQuantity;
 	@FindBy (xpath = "//p[text()='Apex Legends - 1,000 Apex Coins']")
 	public WebElement apexLegends;
@@ -66,8 +66,18 @@ public class OrderPage extends BaseSetup {
 	public WebElement reviewAddedText;
 	@FindBy (xpath ="//div[text()='Order Placed Successfully']")
 	public WebElement orderPlacedMessage;
-	
-	
+	@FindBy (xpath = "//div[@data-id='5278']//div//div[@class='order__header-number']//div//p[text()='Show Details']")
+	public WebElement order5278Details;
+	@FindBy (id = "returnBtn")
+	public WebElement returnBttn;
+	@FindBy (id = "reasonInput")
+	public WebElement returnReasonDropdown;
+	@FindBy (id = "dropOffInput")
+	public WebElement dropOffServiceDropdown;
+	@FindBy (id = "orderSubmitBtn")
+	public WebElement returnSubmitBttn;
+	@FindBy (xpath = "//div[@class='return__confirm-message']//p[text()='Return was successfull']")
+	public WebElement returnConfirmText;
 	
 	
 	

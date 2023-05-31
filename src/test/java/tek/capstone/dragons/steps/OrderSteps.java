@@ -49,7 +49,8 @@ public class OrderSteps extends CommonUtility{
 	}
 	@Then("the cart icon quantity should change to {string}")
 	public void theCartIconQuantityShouldChangeTo(String string) {
-		waitTillPresence(factory.orderPage().CartQuantity);
+//		fluientWaitforElement(factory.orderPage().CartQuantity , 20,20);
+		slowDown();
 	    String ActualResult = factory.orderPage().CartQuantity.getText();
 	    String ExpectedResult = string;
 	    Assert.assertEquals(ExpectedResult, ActualResult);;
@@ -117,9 +118,31 @@ public class OrderSteps extends CommonUtility{
 	public void aCancelationMessageShouldBeDisplayed(String string) {
 	    Assert.assertTrue(factory.orderPage().cancellationConfirmText.isDisplayed());
 	}
-
-	{
-		
+	@When("User click on second order in list")
+	public void userClickOnSecondOrderInList() {
+	    click(factory.orderPage().order5278Details);
+	}
+	@When("User click on Return Items button")
+	public void userClickOnReturnItemsButton() {
+	    click(factory.orderPage().returnBttn);
+	}
+	@When("User select the Return Reason {string}")
+	public void userSelectTheReturnReason(String string) {
+	    selectByVisibleText(factory.orderPage().returnReasonDropdown , string);
+	}
+	@When("User select the drop off service {string}")
+	public void userSelectTheDropOffService(String string) {
+	    selectByVisibleText(factory.orderPage().dropOffServiceDropdown , string);
+	}
+	@When("User click on Return Order button")
+	public void userClickOnReturnOrderButton() {
+	    click(factory.orderPage().returnSubmitBttn);
+	}
+	@Then("a return message should be displayed {string}")
+	public void aReturnMessageShouldBeDisplayed(String string) {
+	    String actualText = factory.orderPage().returnConfirmText.getText();
+	    String expectedText = string;
+	    Assert.assertEquals(expectedText, actualText);
 	}
 	
 	@When("User click on Review button")
