@@ -1,3 +1,4 @@
+@REGRESSION
 Feature: Retail Home Page
 @Home
 Scenario: Verify Shop by Department sidebar

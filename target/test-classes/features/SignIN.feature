@@ -1,3 +1,4 @@
+@REGRESSION
 Feature: Sign in Feature
 Background:
 		Given User is on retail website
@@ -12,6 +13,6 @@ Scenario: Verify user can create an account into Retail Website
 		And User click on Create New Account button
 		And User fill the signUp information with below data
 		| name | email | password | confirmPassword |
-		| JhonBobbb| JhonBobbb@tekschool.us | JhonBob@12345 | JhonBob@12345 |
+		| JhonBobbb| JhonBobbb12@tekschool.us | JhonBob@12345 | JhonBob@12345 |
 		And User click on SignUp button
 		Then User should be logged into account page
