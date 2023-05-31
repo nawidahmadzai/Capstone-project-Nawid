@@ -10,8 +10,8 @@ Background:
 		@Update
 		Scenario: Verify User can update Profile Information
 		When User click on Account option
-		And User update Name 'Jhony Mee121' 
-		And User update Phone '1245487865'
+		And User update Name 'Jhony Meedana' 
+		And User update Phone '1245487869'
 		And User click on Update button
 		Then user profile information should be updated
 		@Payment

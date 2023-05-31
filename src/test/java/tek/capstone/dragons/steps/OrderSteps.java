@@ -39,9 +39,9 @@ public class OrderSteps extends CommonUtility{
 	}
 	@When("User select quantity {string}")
 	public void userSelectQuantity(String string) {
-		slowDown();
+		
 	    selectByVisibleText(factory.orderPage().quantity , string);
-	    slowDown();
+	    
 	}
 	@When("User click add to Cart button")
 	public void userClickAddToCartButton() {
@@ -49,6 +49,7 @@ public class OrderSteps extends CommonUtility{
 	}
 	@Then("the cart icon quantity should change to {string}")
 	public void theCartIconQuantityShouldChangeTo(String string) {
+		waitTillPresence(factory.orderPage().CartQuantity);
 	    String ActualResult = factory.orderPage().CartQuantity.getText();
 	    String ExpectedResult = string;
 	    Assert.assertEquals(ExpectedResult, ActualResult);;
