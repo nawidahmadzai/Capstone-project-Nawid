@@ -39,7 +39,9 @@ public class OrderSteps extends CommonUtility{
 	}
 	@When("User select quantity {string}")
 	public void userSelectQuantity(String string) {
+		slowDown();
 	    selectByVisibleText(factory.orderPage().quantity , string);
+	    slowDown();
 	}
 	@When("User click add to Cart button")
 	public void userClickAddToCartButton() {
@@ -62,6 +64,7 @@ public class OrderSteps extends CommonUtility{
 	}
 	@When("User select the quantity {string}")
 	public void userSelectTheQuantity(String string) {
+		slowDown();
 		selectByValue(factory.orderPage().quantity , string);
 	}
 	@Then("in the cart icon quantity should change to {string}")
@@ -98,6 +101,7 @@ public class OrderSteps extends CommonUtility{
 	}
 	@When("User click on Cancel The Order button")
 	public void userClickOnCancelTheOrderButton() {
+		waitTillClickable(factory.orderPage().cancelOrderBtn);
 	   click(factory.orderPage().cancelOrderBtn);
 	}
 	@When("User select the cancelation Reason {string}")
