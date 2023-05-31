@@ -7,7 +7,7 @@ import io.cucumber.junit.CucumberOptions;
 import static io.cucumber.junit.CucumberOptions.SnippetType.CAMELCASE;
 @RunWith(Cucumber.class)
 @CucumberOptions(
-		tags = "@Return",
+		tags = "@REGRESSION",
 		features = ("classpath:features"),
 		glue = "tek.capstone.dragons",
 		dryRun = false,
